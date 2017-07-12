@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "352605582554",
+    "firebase_url": "https://my-awesome-project-33423.firebaseio.com",
+    "project_id": "my-awesome-project-33423",
+    "storage_bucket": "my-awesome-project-33423.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352605582554:android:50ca04039952dfa5",
+        "android_client_info": {
+          "package_name": "com.example.sarthak.news"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352605582554-ek01ve9kq79eum9vj9i8k5rv7sicpp3c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.sarthak.news",
+            "certificate_hash": "0f93dbea1f61749e0f026b167163aa0325d91c0e"
+          }
+        },
+        {
+          "client_id": "352605582554-2hf7dhdladt08ql4hs9c5sfettc11rg8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpoDclT-l8seXrfdaSyq7_yNSNzh2G7kg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352605582554-2hf7dhdladt08ql4hs9c5sfettc11rg8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="textTitle" format="reference" />
+    <attr name="textBody" format="reference" />
+    <attr name="textTail" format="reference" />
+    <attr name="textColor" format="reference" />
+    <attr name="buttonBackground" format="reference" />
+    <attr name="outlineColor" format="reference" />
+    <attr name="secondaryTextColor" format="reference" />
+    <attr name="layoutBackground" format="reference" />
+</resources>

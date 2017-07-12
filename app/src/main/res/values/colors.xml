@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light theme colors -->
+    <color name="colorPrimary">#03A9F4</color>
+    <color name="colorPrimaryDark">#0288D1</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="lightBookmarkBackgroundColor">#efefef</color>
+    <color name="outlineColorLight">#99abb5</color>
+
+    <!-- Dark theme colors -->
+    <color name="darkColorPrimary">#101010</color>
+    <color name="darkColorPrimaryDark">#000</color>
+    <color name="layoutBackgroundColor">#2d2d2d</color>
+    <color name="darkBookmarkBackgroundColor">#4f4f4f</color>
+    <color name="outlineColorDark">#fff</color>
+
+    <!-- Action bar colors -->
+    <color name="pinkPrimary">#E91E63</color>
+    <color name="pinkPrimaryDark">#C2185B</color>
+    <color name="orangePrimary">#FF9800</color>
+    <color name="orangePrimaryDark">#F57C00</color>
+    <color name="purplePrimary">#673AB7</color>
+    <color name="purplePrimaryDark">#512DA8</color>
+    <color name="yellowPrimary">#FFC107</color>
+    <color name="yellowPrimaryDark">#FFA000</color>
+    <color name="greenPrimary">#4CAF50</color>
+    <color name="greenPrimaryDark">#388E3C</color>
+
+    <!-- Text colors for light and dark themes -->
+    <color name="lightTextColor">#222</color>
+    <color name="darkTextColor">#fff</color>
+    <color name="secondaryTextColor">#222</color>
+</resources>

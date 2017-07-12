@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/news_list_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:id="@+id/news_list_card_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="?layoutBackground"
+            android:weightSum="9">
+
+            <com.example.sarthak.news.utils.SquareImageView
+                android:id="@+id/news_list_card_image"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?layoutBackground"
+                android:scaleType="fitXY"
+                android:layout_margin="8dp"
+                android:layout_weight="3"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:layout_weight="5">
+
+                <TextView
+                    android:id="@+id/news_list_card_label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="?textColor"
+                    android:textSize="15sp"
+                    android:gravity="start"
+                    android:layout_alignParentTop="true"
+                    android:paddingTop="5dp" />
+
+                <TextView
+                    android:id="@+id/news_list_card_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="?secondaryTextColor"
+                    android:gravity="start"
+                    android:layout_alignParentBottom="true"
+                    android:paddingBottom="5dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageButton
+                    android:id="@+id/news_list_card_overflow_btn"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/over"
+                    android:contentDescription="@string/overflow_content_description"
+                    android:background="#0000"
+                    android:scaleType="centerInside"
+                    android:adjustViewBounds="true"
+                    android:padding="5dp"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

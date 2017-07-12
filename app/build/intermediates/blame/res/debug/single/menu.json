@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Sarthak\\Documents\\AndroidProjects\\News\\app\\build\\intermediates\\res\\merged\\debug\\menu\\bookmark.xml",
+        "source": "C:\\Users\\Sarthak\\Documents\\AndroidProjects\\News\\app\\src\\main\\res\\menu\\bookmark.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sarthak\\Documents\\AndroidProjects\\News\\app\\build\\intermediates\\res\\merged\\debug\\menu\\settings.xml",
+        "source": "C:\\Users\\Sarthak\\Documents\\AndroidProjects\\News\\app\\src\\main\\res\\menu\\settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sarthak\\Documents\\AndroidProjects\\News\\app\\build\\intermediates\\res\\merged\\debug\\menu\\remove_bookmark.xml",
+        "source": "C:\\Users\\Sarthak\\Documents\\AndroidProjects\\News\\app\\src\\main\\res\\menu\\remove_bookmark.xml"
+    }
+]

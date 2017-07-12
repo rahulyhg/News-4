@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sarthak.news.activities.SettingsActivity"
+    android:background="?layoutBackground">
+
+    <include layout="@layout/app_bar_toolbar" android:id="@+id/settings_toolbar" />
+
+    <FrameLayout
+        android:id="@+id/settings_frame"
+        android:layout_below="@+id/settings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?layoutBackground"/>
+
+    <TextView
+        android:id="@+id/settings_signOut"
+        android:layout_below="@+id/settings_frame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_log_out"
+        android:textColor="?textColor"
+        android:textSize="15sp"
+        android:background="?layoutBackground"
+        android:paddingTop="10dp"
+        android:paddingStart="18dp"
+        android:paddingEnd="18dp"
+        android:paddingBottom="10dp" />
+
+</RelativeLayout>

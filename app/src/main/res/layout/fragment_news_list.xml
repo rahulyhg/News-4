@@ -1,0 +1,15 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?layoutBackground"
+    tools:context="com.example.sarthak.news.fragments.NewsListFragment">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/news_data"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"/>
+
+</FrameLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <PreferenceCategory
+        android:title="@string/app_settings">
+
+        <CheckBoxPreference
+            android:key="download_images"
+            android:title="@string/download_images"
+            android:summary="Displays images when checkbox is selected."
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/themes">
+
+        <ListPreference
+            android:key="text_size"
+            android:title="Text size"
+            android:summary="Select text size"
+            android:entries="@array/text_size"
+            android:entryValues="@array/text_size"
+            android:defaultValue="@string/text_size_medium"
+            android:dialogTitle="Select text size" />
+
+        <ListPreference
+            android:key="app_theme"
+            android:title="Theme"
+            android:summary="Select app theme"
+            android:entries="@array/theme"
+            android:entryValues="@array/theme"
+            android:defaultValue="@string/theme_light"
+            android:dialogTitle="Pick app theme" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

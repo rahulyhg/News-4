@@ -1,0 +1,60 @@
+<resources>
+
+    <style name="DefaultTheme" parent="Theme.AppCompat.Light.NoActionBar" />
+
+    <!-- Themes for different text sizes -->
+    <style name="TextSizeSmall">
+        <item name="textTitle">@style/SmallTitleText</item>
+        <item name="textBody">@style/SmallBodyText</item>
+        <item name="textTail">@style/SmallTailText</item>
+    </style>
+
+    <style name="TextSizeMedium">
+        <item name="textTitle">@style/MediumTitleText</item>
+        <item name="textBody">@style/MediumBodyText</item>
+        <item name="textTail">@style/MediumTailText</item>
+    </style>
+
+    <style name="TextSizeLarge">
+        <item name="textTitle">@style/LargeTitleText</item>
+        <item name="textBody">@style/LargeBodyText</item>
+        <item name="textTail">@style/LargeTailText</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="DefaultTheme.AppTheme">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="layoutBackground">@color/darkTextColor</item>
+        <item name="buttonBackground">@color/colorPrimary</item>
+        <item name="outlineColor">@color/outlineColorLight</item>
+        <item name="textColor">@color/lightTextColor</item>
+        <item name="secondaryTextColor">@color/secondaryTextColor</item>
+    </style>
+
+    <style name="DefaultTheme.DarkAppTheme">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
+        <item name="colorPrimary">@color/darkColorPrimary</item>
+        <item name="colorPrimaryDark">@color/darkColorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="layoutBackground">@color/layoutBackgroundColor</item>
+        <item name="buttonBackground">@color/darkBookmarkBackgroundColor</item>
+        <item name="outlineColor">@color/outlineColorDark</item>
+        <item name="textColor">@color/darkTextColor</item>
+        <item name="secondaryTextColor">@color/darkTextColor</item>
+        <item name="android:textColor">@color/darkTextColor</item>
+        <item name="android:textColorSecondary">@color/darkTextColor</item>
+    </style>
+
+</resources>
+
