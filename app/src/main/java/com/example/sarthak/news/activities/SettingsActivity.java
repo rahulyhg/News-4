@@ -1,6 +1,7 @@
 package com.example.sarthak.news.activities;
 
 import android.app.AlertDialog;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
@@ -31,6 +32,7 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
         super.configureToolbar();
 
         // set up toolbar UP/Back button
+        // handle NullPointerException
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
@@ -80,7 +82,7 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
 
         PreferenceFragment settingsFragment = new AppPreferencesFragment();
 
-        android.app.FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.settings_frame, settingsFragment);
         fragmentTransaction.commit();
     }
@@ -99,7 +101,8 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
                     public void onClick(DialogInterface dialog, int which) {
 
                         // logout current user from firebase authentication
-                        new FirebaseAuthorisation(SettingsActivity.this).logoutUser();
+                        FirebaseAuthorisation firebaseAuthorisation = new FirebaseAuthorisation(SettingsActivity.this);
+                        firebaseAuthorisation.logoutUser();
                     }
 
                 })

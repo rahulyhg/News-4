@@ -6,7 +6,6 @@ import android.support.design.widget.TextInputLayout;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.example.sarthak.news.R;
 import com.example.sarthak.news.firebasemanager.FirebaseAuthorisation;
@@ -49,6 +48,7 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
         super.configureToolbar();
 
         // set up toolbar UP/Back button
+        // handle NullPointerException
         if (getSupportActionBar() != null)
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }

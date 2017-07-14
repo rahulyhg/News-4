@@ -130,6 +130,8 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
     }
 
     /**
+     * NavigationDrawerItemClickListener callback
+     *
      * itemClicked is called when an item is clicked from the navigation drawer recycler view.
      * Called on NavigationDrawerItemClickListener from NavigationDrawerFragment.
      *
@@ -145,7 +147,7 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        // specify the settings option menu in toolbar
+        // inflate settings option menu in toolbar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.settings, menu);
         return true;
@@ -172,7 +174,7 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
      *
      * Set up default news category as 'Home' in NewsListFragment.
      * Send changeActionBar value to fragment to set up action bar colour.
-     * Send displayImages status to decide whether to display images or not.
+     * Send downloadImages status to decide whether to display images or not.
      */
     private void launchDefaultFragment() {
 
@@ -232,9 +234,9 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
      * PURPOSE: Launch NavigationDrawerFragment in navigation drawer with list of
      * news category obtained from firebase database
      *
-     * Add newsCategory arraylist to bundle and pass to NavigationDrawerFragment.
+     * newsCategory arraylist is sent to bundle and which is to be passed to NavigationDrawerFragment later.
      * changeActionBarColor is sent to set action bar color based on app theme.
-     * displayImages is sent to decide whether to display images or not.
+     * downloadImages is sent to decide whether to display images or not.
      */
     public void launchNavigationDrawerFragment() {
 
@@ -279,6 +281,7 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
 
                 if (snackbar != null) {
 
+                    // dismiss snackbar
                     snackbar.dismiss();
                 }
             }
@@ -286,6 +289,7 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
             @Override
             protected void setUpLayout() {
 
+                // check if no internet connection
                 if (!NetworkUtil.getConnectivityStatus(HomeScreenActivity.this)) {
 
                     snackbar = Snackbar.make(frameLayout, R.string.error_connection, Snackbar.LENGTH_INDEFINITE);

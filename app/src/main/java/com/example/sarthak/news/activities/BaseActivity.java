@@ -82,6 +82,8 @@ public abstract class BaseActivity extends AppCompatActivity {
 
             setSupportActionBar(mToolbar);
 
+            // set activity title
+            // handle NullPointerException
             if (getSupportActionBar() != null)
                 getSupportActionBar().setTitle(getToolbarTitle());
         }

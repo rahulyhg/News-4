@@ -61,5 +61,6 @@
     <string name="news_fetch_message">Fetching data…</string>
     <string name="menu_remove_from_list">Remove from list</string>
     <string name="menu_bookmark">Bookmark</string>
+    <string name="volley_error">Please try again</string>
 
 </resources>

@@ -43,18 +43,20 @@ class NewsViewHolder extends RecyclerView.ViewHolder {
      *
      * @param mContext is the context of NewsListFragment
      * @param item is the news item data to set in each row
+     * @param downloadImages is a boolean value storing user selected option of displaying images or not
      */
     void bindData(Context mContext, Item item, boolean downloadImages) {
 
         title.setText(item.getHeadline());
         date.setText(mContext.getString(R.string.updated_date, item.getDate()));
 
+        // check for status of boolean downloadImages
+        // display default image if user has disabled downloading images
         if (downloadImages) {
 
             Picasso.with(mContext)
                     .load(item.getImageUrl1())
-                    .resize(480, 380)
-                    .centerCrop()
+                    .fit()
                     .into(thumbnail);
         } else {
 

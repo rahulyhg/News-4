@@ -168,6 +168,8 @@
     <color name="dim_foreground_material_light">#ff323232</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
+    <color name="greenPrimary">#4CAF50</color>
+    <color name="greenPrimaryDark">#388E3C</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="hint_foreground_material_dark">@color/bright_foreground_disabled_material_dark</color>
@@ -214,6 +216,8 @@
     <color name="switch_thumb_disabled_material_light">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_dark">#ffbdbdbd</color>
     <color name="switch_thumb_normal_material_light">#fff1f1f1</color>
+    <color name="yellowPrimary">#FFC107</color>
+    <color name="yellowPrimaryDark">#FFA000</color>
     <declare-styleable name="ActionBar"><attr name="navigationMode">
             
             <enum name="normal" value="0"/>
@@ -618,8 +622,6 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
-    <dimen name="activity_horizontal_margin">0dp</dimen>
-    <dimen name="activity_vertical_margin">0dp</dimen>
     <dimen name="cardview_compat_inset_shadow">1dp</dimen>
     <dimen name="cardview_default_elevation">2dp</dimen>
     <dimen name="cardview_default_radius">2dp</dimen>
@@ -660,16 +662,12 @@
     <dimen name="design_tab_text_size_2line">12sp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
-    <dimen name="fab_margin">16dp</dimen>
-    <dimen name="g_top_margin">30dp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
     <dimen name="item_touch_helper_max_drag_scroll_per_frame">20dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_max_velocity">800dp</dimen>
     <dimen name="item_touch_helper_swipe_escape_velocity">120dp</dimen>
-    <dimen name="nav_header_height">160dp</dimen>
-    <dimen name="nav_header_vertical_spacing">16dp</dimen>
     <dimen name="notification_large_icon_height">64dp</dimen>
     <dimen name="notification_large_icon_width">64dp</dimen>
     <dimen name="notification_subtext_size">12dp</dimen>
@@ -700,8 +698,8 @@
     <integer name="status_bar_notification_info_maxnum">999</integer>
     <string name="KEY_BOOKMARKS">Bookmarks</string>
     <string name="KEY_HOME">Home</string>
+    <string name="KEY_INTERNATIONAL">International</string>
     <string name="KEY_NATIONAL">National</string>
-    <string name="KEY_POLITICS">International</string>
     <string name="KEY_SPORTS">Sports</string>
     <string name="KEY_TOP_STORIES">Top Stories</string>
     <string name="KEY_USERS">Users</string>
@@ -770,6 +768,8 @@
     <string name="google_app_id" translatable="false">1:352605582554:android:50ca04039952dfa5</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBpoDclT-l8seXrfdaSyq7_yNSNzh2G7kg</string>
     <string name="google_storage_bucket" translatable="false">my-awesome-project-33423.appspot.com</string>
+    <string name="menu_bookmark">Bookmark</string>
+    <string name="menu_remove_from_list">Remove from list</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="news_fetch_message">Fetching data…</string>
@@ -800,6 +800,7 @@
     <string name="theme_light">Light</string>
     <string name="themes">THEMES</string>
     <string name="updated_date">Updated %1$s</string>
+    <string name="volley_error">Please try again</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

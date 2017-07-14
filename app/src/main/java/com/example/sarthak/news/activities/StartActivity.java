@@ -106,6 +106,7 @@ public class StartActivity extends BaseActivity implements View.OnClickListener 
 
         if (!(TextUtils.isEmpty(email) || TextUtils.isEmpty(password))) {
 
+            // show progress dialog
             mProgressDialog.show();
             // login registered user
             FirebaseAuthorisation firebaseAuthorisation = new FirebaseAuthorisation(StartActivity.this);

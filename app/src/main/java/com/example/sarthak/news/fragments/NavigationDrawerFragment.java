@@ -39,14 +39,13 @@ public class NavigationDrawerFragment extends Fragment implements RecyclerViewIt
         // retrieve a set of values from HomeScreenActivity
         // newsCategory arraylist is displayed as items in recycler view.
         // changeActionBarColor is sent to NewsListFragment to set action bar color based on app theme.
-        // displayImages is sent to NewsListFragment to decide whether to display images or not.
+        // downloadImages is sent to NewsListFragment to decide whether to display images or not.
         newsCategory = getArguments().getStringArrayList(Constants.INTENT_KEY_NEWS_CATEGORY);
         changeActionBarColor = getArguments().getBoolean(Constants.INTENT_KEY_ACTION_BAR, true);
         downloadImages = getArguments().getBoolean(Constants.INTENT_KEY_DOWNLOAD_IMAGES, true);
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
         adapter = new NavigationDrawerRecyclerAdapter(getActivity(), newsCategory);
-        // recycler view onClick listener
         adapter.setOnRecyclerViewItemClickListener(this);
         recyclerView.setAdapter(adapter);
 
@@ -87,7 +86,7 @@ public class NavigationDrawerFragment extends Fragment implements RecyclerViewIt
         fragmentTransaction.replace(R.id.content_frame, newsListFragment);
         fragmentTransaction.commit();
 
-        // call interface method
+        // callback to NavigationDrawerItemClickListener
         // used to close drawer layout
         navigationDrawerItemClickListener.itemCLicked();
     }

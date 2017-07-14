@@ -27,8 +27,8 @@ public class ErrorFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_error, container, false);
 
         // get news category from NewsListFragment
-        // though news category is not used in ErrorFragment, it is stored to send back value
-        // to NewsListFragment after connection becomes available
+        // Though news category is not used in ErrorFragment, it is stored to send back value
+        // to NewsListFragment after connection becomes available.
         category = getArguments().getString(Constants.INTENT_KEY_NEWS_CATEGORY, getString(R.string.KEY_TOP_STORIES));
 
         // show NewsListFragment as soon as connection becomes available
@@ -50,7 +50,7 @@ public class ErrorFragment extends Fragment {
     }
 
     /**
-     * Launches NewsListFragment When connection becomes available.
+     * Launches NewsListFragment when connection becomes available.
      *
      * Since ErrorFragment is launched only when there is no network access,
      * as soon as network is available, it launches NewListFragment to display news item.

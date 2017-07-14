@@ -85,6 +85,11 @@ public class FirebaseAuthorisation {
 
                                 // finish current activity
                                 ((Activity) mContext).finish();
+                            } else {
+
+                                // display error message
+                                mProgressDialog.dismiss();
+                                Toast.makeText(mContext, R.string.auth_failed, Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -119,7 +124,8 @@ public class FirebaseAuthorisation {
                     ((Activity) mContext).finish();
                 } else {
 
-                    mProgressDialog.hide();
+                    // display error message
+                    mProgressDialog.dismiss();
                     Toast.makeText(mContext, R.string.auth_failed, Toast.LENGTH_SHORT).show();
                 }
             }

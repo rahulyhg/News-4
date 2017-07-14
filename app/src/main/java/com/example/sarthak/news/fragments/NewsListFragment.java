@@ -72,7 +72,7 @@ public class NewsListFragment extends Fragment implements RecyclerViewItemClickL
         // retrieve a set of values from NavigationDrawerFragment/HomeScreenActivity
         // category is used to display news articles of corresponding news category.
         // changeActionBarColor is used to set action bar color based on app theme.
-        // displayImages is used to decide whether to display images or not.
+        // downloadImages is used to decide whether to display images or not.
         category = getArguments().getString(Constants.INTENT_KEY_NEWS_CATEGORY, getString(R.string.KEY_TOP_STORIES));
         changeActionBarColor = getArguments().getBoolean(Constants.INTENT_KEY_ACTION_BAR, true);
         downloadImages = getArguments().getBoolean(Constants.INTENT_KEY_DOWNLOAD_IMAGES, true);
@@ -97,8 +97,14 @@ public class NewsListFragment extends Fragment implements RecyclerViewItemClickL
         }
 
         recyclerView = (RecyclerView) view.findViewById(R.id.news_data);
+
+        // pass a set of values to recycler adapter
+        // newsListData is an arraylist comprising headline, date and image Url to be displayed in recycler view.
+        // newsItem is an arraylist with complete details of each news article.
+        // category is used to display news articles of corresponding news category.
+        // changeActionBarColor is used to set action bar color based on app theme.
+        // downloadImages is used to decide whether to display images or not.
         adapter = new NewsListRecyclerAdapter(getActivity(), newsListData, newsItem, category, changeActionBarColor, downloadImages);
-        // recycler view on click listener
         adapter.setOnRecyclerViewItemClickListener(this);
         recyclerView.setAdapter(adapter);
 
@@ -135,7 +141,12 @@ public class NewsListFragment extends Fragment implements RecyclerViewItemClickL
     /**
      * Recycler view on click listener
      *
-     * Launches NewsDescriptionActivity.
+     * Stores a boolean value 'true' for selected news article in shared preferences.
+     * Used to identify 'Read' news articles to change background color.
+     * Key is set as currentUser UID along with news article headline. This way 'Read' status
+     * is independent for each user.
+     *
+     * Then launches NewsDescriptionActivity.
      */
     @Override
     public void onClick(View view, int position) {
@@ -149,7 +160,7 @@ public class NewsListFragment extends Fragment implements RecyclerViewItemClickL
         // background of article is changed if value for the article in shared preferences is true
         SharedPreferences.Editor editor = getActivity()
                 .getSharedPreferences(Constants.READ_ARTICLES_STATUS_SHARED_PREFERENCES, MODE_PRIVATE).edit();
-        editor.putBoolean(currentUser + category + String.valueOf(position), true);
+        editor.putBoolean(currentUser + newsItem.get(position).getHeadline(), true);
         editor.apply();
 
         // launch NewsDescriptionActivity with data of the selected news item

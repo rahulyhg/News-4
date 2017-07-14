@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -50,6 +51,7 @@ public class NewsDescriptionActivity extends BaseActivity {
         coordinatorLayout = (CoordinatorLayout) findViewById(R.id.layout_frame);
 
         // make progress bar visible when loading data
+        // it is dismissed when loading is complete
         progressBar.setVisibility(View.VISIBLE);
 
         // display error snackbar when no internet connection
@@ -153,6 +155,7 @@ public class NewsDescriptionActivity extends BaseActivity {
                         mDescription2.setText(response.substring(length + count + 1));
 
                         // check for status of boolean downloadImages from base activity
+                        // display default images if user has disabled downloading images
                         if (downloadImages) {
 
                             Picasso.with(getApplicationContext())
@@ -175,6 +178,7 @@ public class NewsDescriptionActivity extends BaseActivity {
             @Override
             public void onErrorResponse(VolleyError error) {
 
+                Toast.makeText(NewsDescriptionActivity.this, R.string.volley_error, Toast.LENGTH_LONG).show();
             }
         });
 
@@ -210,6 +214,7 @@ public class NewsDescriptionActivity extends BaseActivity {
 
                 if (snackbar != null) {
 
+                    // dismiss snackbar
                     snackbar.dismiss();
                 }
             }
@@ -217,10 +222,12 @@ public class NewsDescriptionActivity extends BaseActivity {
             @Override
             protected void setUpLayout() {
 
+                // check if no internet connection
                 if (!NetworkUtil.getConnectivityStatus(NewsDescriptionActivity.this)) {
 
+                    // dismiss progress bar
                     progressBar.setVisibility(View.INVISIBLE);
-
+                    // show error message in snackbar
                     snackbar = Snackbar.make(coordinatorLayout, getString(R.string.error_connection), Snackbar.LENGTH_INDEFINITE);
                     snackbar.show();
                 }

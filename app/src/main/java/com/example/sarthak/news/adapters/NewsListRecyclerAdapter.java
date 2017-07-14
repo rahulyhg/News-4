@@ -61,11 +61,17 @@ public class NewsListRecyclerAdapter extends RecyclerView.Adapter<NewsViewHolder
     private RecyclerViewItemClickListener onRecyclerViewItemClickListener;
 
     public NewsListRecyclerAdapter(Context mContext, List<Item> newsListData
-            , ArrayList<Item> newsListDetails, String category, boolean changeReadNewsColor, boolean downloadImages) {
+            , ArrayList<Item> newsDetails, String category, boolean changeReadNewsColor, boolean downloadImages) {
 
         this.mContext = mContext;
+
+        // newsListData is an arraylist comprising headline, date and image Url to be displayed in recycler view.
+        // newsDetails is an arraylist with complete details of each news article.
+        // category is used to display news articles of corresponding news category.
+        // changeActionBarColor is used to set action bar color based on app theme.
+        // downloadImages is used to decide whether to display images or not.
         this.newsCard = newsListData;
-        this.newsDetails = newsListDetails;
+        this.newsDetails = newsDetails;
         this.category = category;
         this.changeReadNewsColor = changeReadNewsColor;
         this.downloadImages = downloadImages;
@@ -143,7 +149,7 @@ public class NewsListRecyclerAdapter extends RecyclerView.Adapter<NewsViewHolder
         String currentUser = new FirebaseAuthorisation(mContext).getCurrentUser();
 
         SharedPreferences prefs = mContext.getSharedPreferences(Constants.READ_ARTICLES_STATUS_SHARED_PREFERENCES, MODE_PRIVATE);
-        boolean status = prefs.getBoolean(currentUser + category + String.valueOf(position), false);
+        boolean status = prefs.getBoolean(currentUser + newsDetails.get(position).getHeadline(), false);
 
         if (status) {
             if (changeReadNewsColor)
@@ -229,7 +235,8 @@ public class NewsListRecyclerAdapter extends RecyclerView.Adapter<NewsViewHolder
 
                     // firebase database reference
                     DatabaseReference bookmarkReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
-                            .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS)).child("0" + String.valueOf(bookmarkCount + 1));
+                            .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
+                            .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(bookmarkCount + 1));
 
                     HashMap<String, String> userMap = new HashMap<>();
                     userMap.put("date", newsDetails.get(position).getDate());
@@ -281,19 +288,25 @@ public class NewsListRecyclerAdapter extends RecyclerView.Adapter<NewsViewHolder
                     // remove shared preferences 'Read' status
                     SharedPreferences.Editor editor = mContext
                             .getSharedPreferences(Constants.READ_ARTICLES_STATUS_SHARED_PREFERENCES, MODE_PRIVATE).edit();
-                    editor.remove(currentUser + category + String.valueOf(position));
+                    editor.remove(currentUser + newsDetails.get(position).getHeadline());
                     editor.apply();
 
                     // firebase database reference
                     DatabaseReference removeDataReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
-                            .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS)).child("0" + String.valueOf(newsPosition));
+                            .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
+                            .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(newsPosition));
+                    // remove data item
                     removeDataReference.removeValue();
 
+                    //-------------------------------------------------------------------------------------
+                    // update index of news items following deleted news item
+                    //-------------------------------------------------------------------------------------
                     // decrease index of following news items by 1.
                     for (int i = newsPosition + 1 ; i <= newsDetails.size() ; i++) {
 
                         DatabaseReference bookmarkReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
-                                .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS)).child("0" + String.valueOf(i - 1));
+                                .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
+                                .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(i - 1));
 
                         Item newsItem = newsDetails.get(i - 1);
 
@@ -302,7 +315,8 @@ public class NewsListRecyclerAdapter extends RecyclerView.Adapter<NewsViewHolder
 
                     // remove last item in firebase database as it has been copied to its previous location
                     DatabaseReference removeDatabaseFinalValueReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
-                            .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS)).child("0" + String.valueOf(newsDetails.size()));
+                            .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
+                            .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(newsDetails.size()));
                     removeDatabaseFinalValueReference.removeValue();
                 }
                 return false;
