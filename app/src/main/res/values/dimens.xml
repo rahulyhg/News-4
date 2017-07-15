@@ -1,3 +1,27 @@
 <resources>
+    <!-- Settings activity dimens -->
+    <dimen name="settings_logout_start_end_margin">18dp</dimen>
+    <dimen name="settings_logout_top_margin">10dp</dimen>
 
+    <!-- News description activity dimens -->
+    <dimen name="news_image_min_height">250dp</dimen>
+    <dimen name="progress_bar_size">50dp</dimen>
+
+    <!-- Register activity dimens -->
+    <dimen name="register_layout_top_margin">90dp</dimen>
+    <dimen name="register_button_margin">25dp</dimen>
+    <dimen name="register_text_margin">20dp</dimen>
+
+    <!-- Start activity dimens -->
+    <dimen name="app_logo_padding">50dp</dimen>
+    <dimen name="start_layout_margin">16dp</dimen>
+
+    <!-- News list card view dimens -->
+    <dimen name="card_news_list_image_margin">8dp</dimen>
+    <dimen name="card_news_list_padding">5dp</dimen>
+    <dimen name="overflow_image_size">35dp</dimen>
+
+    <!-- Other dimens -->
+    <dimen name="textview_margin">10dp</dimen>
+    <dimen name="navigation_drawer_top_margin">24dp</dimen>
 </resources>

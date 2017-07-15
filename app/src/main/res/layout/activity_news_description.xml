@@ -17,8 +17,6 @@
             android:id="@+id/CollapsingToolbarLayout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:expandedTitleMarginStart="48dp"
-            app:expandedTitleMarginEnd="64dp"
             app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             android:fitsSystemWindows="true">
@@ -34,7 +32,7 @@
                 android:id="@+id/news_desc_head_image"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="250dp"
+                android:minHeight="@dimen/news_image_min_height"
                 android:contentDescription="@string/news_image_2"
                 android:background="?layoutBackground"
                 android:scaleType="fitXY"
@@ -60,7 +58,7 @@
                 android:layout_height="wrap_content"
                 style="?textTitle"
                 android:textColor="?textColor"
-                android:layout_margin="10dp"
+                android:layout_margin="@dimen/textview_margin"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"/>
 
@@ -71,9 +69,9 @@
                 android:layout_height="wrap_content"
                 style="?textTail"
                 android:textColor="?secondaryTextColor"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginBottom="@dimen/textview_margin"
+                android:layout_marginLeft="@dimen/textview_margin"
+                android:layout_marginRight="@dimen/textview_margin"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
@@ -84,15 +82,15 @@
                 style="?textBody"
                 android:textColor="?textColor"
                 android:layout_marginBottom="5dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="@dimen/textview_margin"
+                android:layout_marginRight="@dimen/textview_margin"
                 android:layout_centerHorizontal="true"/>
 
             <ProgressBar
                 android:id="@+id/news_desc_progressbar"
                 android:layout_centerInParent="true"
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
+                android:layout_width="@dimen/progress_bar_size"
+                android:layout_height="@dimen/progress_bar_size" />
 
             <ImageView
                 android:id="@+id/news_desc_tail_image"
@@ -102,8 +100,8 @@
                 android:contentDescription="@string/news_image_1"
                 android:background="?layoutBackground"
                 android:scaleType="fitXY"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="@dimen/textview_margin"
+                android:layout_marginRight="@dimen/textview_margin"
                 android:layout_centerHorizontal="true"/>
 
             <TextView
@@ -114,9 +112,9 @@
                 android:textColor="?textColor"
                 style="?textBody"
                 android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginRight="@dimen/textview_margin"
+                android:layout_marginLeft="@dimen/textview_margin"
+                android:layout_marginBottom="@dimen/textview_margin"
                 android:layout_centerHorizontal="true" />
 
         </RelativeLayout>

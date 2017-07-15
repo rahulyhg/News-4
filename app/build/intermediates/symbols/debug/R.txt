@@ -667,9 +667,14 @@ int dimen highlight_alpha_material_light 0x7f080072
 int dimen item_touch_helper_max_drag_scroll_per_frame 0x7f080073
 int dimen item_touch_helper_swipe_escape_max_velocity 0x7f080074
 int dimen item_touch_helper_swipe_escape_velocity 0x7f080075
-int dimen notification_large_icon_height 0x7f080076
-int dimen notification_large_icon_width 0x7f080077
-int dimen notification_subtext_size 0x7f080078
+int dimen navigation_drawer_top_margin 0x7f080076
+int dimen news_image_min_height 0x7f080077
+int dimen notification_large_icon_height 0x7f080078
+int dimen notification_large_icon_width 0x7f080079
+int dimen notification_subtext_size 0x7f08007a
+int dimen settings_logout_start_end_margin 0x7f08007b
+int dimen settings_logout_top_margin 0x7f08007c
+int dimen textview_margin 0x7f08007d
 int drawable abc_ab_share_pack_mtrl_alpha 0x7f020000
 int drawable abc_action_bar_item_background_material 0x7f020001
 int drawable abc_btn_borderless_material 0x7f020002

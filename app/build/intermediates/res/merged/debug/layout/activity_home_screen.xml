@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="?layoutBackground"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="@dimen/navigation_drawer_top_margin" />
 
     </android.support.design.widget.NavigationView>
 

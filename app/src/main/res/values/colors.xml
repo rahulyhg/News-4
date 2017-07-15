@@ -30,4 +30,6 @@
     <color name="lightTextColor">#222</color>
     <color name="darkTextColor">#fff</color>
     <color name="secondaryTextColor">#222</color>
+
+    <color name="transparentColor">#0000</color>
 </resources>
