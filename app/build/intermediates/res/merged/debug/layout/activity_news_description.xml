@@ -89,8 +89,8 @@
             <ProgressBar
                 android:id="@+id/news_desc_progressbar"
                 android:layout_centerInParent="true"
-                android:layout_width="50dp"
-                android:layout_height="50dp" />
+                android:layout_width="@dimen/progress_bar_size"
+                android:layout_height="@dimen/progress_bar_size" />
 
             <ImageView
                 android:id="@+id/news_desc_tail_image"

@@ -13,16 +13,14 @@ import com.example.sarthak.news.firebasemanager.FirebaseAuthorisation;
 public class RegisterActivity extends BaseActivity implements View.OnClickListener {
 
     private TextInputLayout mName, mEmail, mPassword;
+    private Button mSignUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Button mSignUp = (Button) findViewById(R.id.register_sign_up_btn);
-
-        mName = (TextInputLayout) findViewById(R.id.register_name);
-        mEmail = (TextInputLayout) findViewById(R.id.register_email);
-        mPassword = (TextInputLayout) findViewById(R.id.register_password);
+        // initialise all view components
+        setUpView();
 
         // sign up button onClick listener
         mSignUp.setOnClickListener(this);
@@ -74,6 +72,18 @@ public class RegisterActivity extends BaseActivity implements View.OnClickListen
                 registerUser();
                 break;
         }
+    }
+
+    /**
+     * Initialise all view components
+     */
+    private void setUpView() {
+
+        mSignUp = (Button) findViewById(R.id.register_sign_up_btn);
+
+        mName = (TextInputLayout) findViewById(R.id.register_name);
+        mEmail = (TextInputLayout) findViewById(R.id.register_email);
+        mPassword = (TextInputLayout) findViewById(R.id.register_password);
     }
 
     /**

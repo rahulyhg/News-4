@@ -40,15 +40,8 @@ public class NewsDescriptionActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        mNewsImage1 = (ImageView) findViewById(R.id.news_desc_head_image);
-        mNewsImage2 = (ImageView)  findViewById(R.id.news_desc_tail_image);
-        mHeadline = (TextView) findViewById(R.id.news_desc_headline);
-        mDescription1 = (TextView) findViewById(R.id.news_desc_body);
-        mDescription2 = (TextView) findViewById(R.id.news_desc_tail_body);
-        mDate = (TextView) findViewById(R.id.news_desc_date);
-        progressBar = (ProgressBar) findViewById(R.id.news_desc_progressbar);
-
-        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.layout_frame);
+        // initialise all view components
+        setUpView();
 
         // make progress bar visible when loading data
         // it is dismissed when loading is complete
@@ -103,6 +96,22 @@ public class NewsDescriptionActivity extends BaseActivity {
 
         // unregister broadcast receiver
         unregisterReceiver(networkChangeReceiver);
+    }
+
+    /**
+     * Initialise all view components
+     */
+    private void setUpView() {
+
+        mNewsImage1 = (ImageView) findViewById(R.id.news_desc_head_image);
+        mNewsImage2 = (ImageView)  findViewById(R.id.news_desc_tail_image);
+        mHeadline = (TextView) findViewById(R.id.news_desc_headline);
+        mDescription1 = (TextView) findViewById(R.id.news_desc_body);
+        mDescription2 = (TextView) findViewById(R.id.news_desc_tail_body);
+        mDate = (TextView) findViewById(R.id.news_desc_date);
+        progressBar = (ProgressBar) findViewById(R.id.news_desc_progressbar);
+
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.layout_frame);
     }
 
     /**

@@ -37,8 +37,6 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
 
     boolean changeActionBarColor;
 
-    FrameLayout frameLayout;
-
     ArrayList<String> newsCategory = new ArrayList<>();
 
     NetworkChangeReceiver networkChangeReceiver;
@@ -48,8 +46,6 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        frameLayout = (FrameLayout) findViewById(R.id.content_frame);
 
         // display error snackbar when no internet connection
         showErrorSnackbar();
@@ -288,6 +284,8 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
 
             @Override
             protected void setUpLayout() {
+
+                FrameLayout frameLayout = (FrameLayout) findViewById(R.id.content_frame);
 
                 // check if no internet connection
                 if (!NetworkUtil.getConnectivityStatus(HomeScreenActivity.this)) {

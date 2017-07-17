@@ -23,15 +23,15 @@
                 android:layout_height="wrap_content"
                 android:background="?layoutBackground"
                 android:scaleType="fitXY"
-                android:layout_margin="8dp"
+                android:layout_margin="@dimen/card_news_list_image_margin"
                 android:layout_weight="3"/>
 
             <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:paddingTop="5dp"
-                android:paddingBottom="5dp"
+                android:paddingTop="@dimen/card_news_list_padding"
+                android:paddingBottom="@dimen/card_news_list_padding"
                 android:layout_weight="5">
 
                 <TextView
@@ -43,7 +43,7 @@
                     android:textSize="15sp"
                     android:gravity="start"
                     android:layout_alignParentTop="true"
-                    android:paddingTop="5dp" />
+                    android:paddingTop="@dimen/card_news_list_padding" />
 
                 <TextView
                     android:id="@+id/news_list_card_date"
@@ -53,7 +53,7 @@
                     android:textColor="?secondaryTextColor"
                     android:gravity="start"
                     android:layout_alignParentBottom="true"
-                    android:paddingBottom="5dp" />
+                    android:paddingBottom="@dimen/card_news_list_padding" />
 
             </RelativeLayout>
 
@@ -64,14 +64,14 @@
 
                 <ImageButton
                     android:id="@+id/news_list_card_overflow_btn"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="@dimen/overflow_image_size"
+                    android:layout_height="@dimen/overflow_image_size"
                     android:src="@drawable/over"
                     android:contentDescription="@string/overflow_content_description"
-                    android:background="#0000"
+                    android:background="@color/transparentColor"
                     android:scaleType="centerInside"
                     android:adjustViewBounds="true"
-                    android:padding="5dp"
+                    android:padding="@dimen/card_news_list_padding"
                     android:layout_centerInParent="true" />
 
             </RelativeLayout>

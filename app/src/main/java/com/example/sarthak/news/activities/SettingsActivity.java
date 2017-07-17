@@ -18,11 +18,10 @@ public class SettingsActivity extends BaseActivity implements View.OnClickListen
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        TextView logOut = (TextView) findViewById(R.id.settings_signOut);
-
         // call settings preference fragment
         launchSettingsFragment();
 
+        TextView logOut = (TextView) findViewById(R.id.settings_signOut);
         // handle onClick listener
         logOut.setOnClickListener(this);
     }
