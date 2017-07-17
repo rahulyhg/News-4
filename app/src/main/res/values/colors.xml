@@ -31,5 +31,6 @@
     <color name="darkTextColor">#fff</color>
     <color name="secondaryTextColor">#222</color>
 
+    <color name="splashBackgroundColor">#fff</color>
     <color name="transparentColor">#0000</color>
 </resources>

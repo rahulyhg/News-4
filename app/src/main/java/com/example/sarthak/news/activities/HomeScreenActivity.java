@@ -94,11 +94,6 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
         // launch animation
         overridePendingTransition(R.anim.enter_from_left, R.anim.exit_out_right);
 
-        // check for firebase user login
-        // redirect to start activity if no user login
-        FirebaseAuthorisation firebaseAuthorisation = new FirebaseAuthorisation(HomeScreenActivity.this);
-        firebaseAuthorisation.checkFirebaseLogin();
-
         // register broadcast receiver which listens for change in network state
         registerReceiver(networkChangeReceiver, new IntentFilter(Constants.CONNECTIVITY_CHANGE_ACTION));
     }

@@ -132,17 +132,6 @@ public class FirebaseAuthorisation {
         });
     }
 
-    // check if current user is logged in
-    public void checkFirebaseLogin() {
-
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        if (currentUser == null) {
-
-            logoutUser();
-        }
-    }
-
     // get current user UID
     public String getCurrentUser() {
 
