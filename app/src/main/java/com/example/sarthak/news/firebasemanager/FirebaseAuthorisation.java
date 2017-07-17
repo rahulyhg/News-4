@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import com.example.sarthak.news.R;
 import com.example.sarthak.news.activities.HomeScreenActivity;
-import com.example.sarthak.news.activities.StartActivity;
+import com.example.sarthak.news.activities.LoginActivity;
 import com.example.sarthak.news.models.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -162,7 +162,7 @@ public class FirebaseAuthorisation {
         mAuth.signOut();
 
         // launch start activity
-        Intent startIntent = new Intent(mContext, StartActivity.class);
+        Intent startIntent = new Intent(mContext, LoginActivity.class);
         startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         mContext.startActivity(startIntent);
 

@@ -12,7 +12,7 @@ import android.widget.Toast;
 import com.example.sarthak.news.R;
 import com.example.sarthak.news.firebasemanager.FirebaseAuthorisation;
 
-public class StartActivity extends BaseActivity implements View.OnClickListener {
+public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
     private EditText mEmailInput, mPassInput;
     private Button mLoginButton, mRegButton;
@@ -95,7 +95,7 @@ public class StartActivity extends BaseActivity implements View.OnClickListener 
      */
     private void launchRegisterActivity() {
 
-        Intent registerIntent = new Intent(StartActivity.this, RegisterActivity.class);
+        Intent registerIntent = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(registerIntent);
     }
 
@@ -119,11 +119,11 @@ public class StartActivity extends BaseActivity implements View.OnClickListener 
             // show progress dialog
             mProgressDialog.show();
             // login registered user
-            FirebaseAuthorisation firebaseAuthorisation = new FirebaseAuthorisation(StartActivity.this);
+            FirebaseAuthorisation firebaseAuthorisation = new FirebaseAuthorisation(LoginActivity.this);
             firebaseAuthorisation.loginUser(email, password, mProgressDialog);
         } else {
 
-            Toast.makeText(StartActivity.this, R.string.start_error_message, Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, R.string.start_error_message, Toast.LENGTH_LONG).show();
         }
     }
 }
