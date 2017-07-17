@@ -204,7 +204,7 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
                 for (final DataSnapshot child : dataSnapshot.getChildren()) {
 
                     // do not add 'Users' key to the newsCategory
-                    // only add news category keys from the database to array list
+                    // only add news category keys from firebase database to array list
                     if (!child.getKey().equals(getString(R.string.KEY_USERS))) {
 
                         newsCategory.add(child.getKey());

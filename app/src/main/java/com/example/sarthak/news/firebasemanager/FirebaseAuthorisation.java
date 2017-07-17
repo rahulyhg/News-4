@@ -25,7 +25,7 @@ public class FirebaseAuthorisation {
 
     private FirebaseAuth mAuth;
 
-    // call to firebase authentication
+    // set up firebase authentication
     public FirebaseAuthorisation(Context context) {
 
         this.mContext = context;
