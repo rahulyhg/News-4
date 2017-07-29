@@ -14,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import com.example.sarthak.news.firebasemanager.FirebaseAuthorisation;
 import com.example.sarthak.news.fragments.NavigationDrawerFragment;
 import com.example.sarthak.news.utils.Constants;
 import com.example.sarthak.news.utils.NavigationDrawerItemClickListener;

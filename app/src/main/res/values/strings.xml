@@ -55,6 +55,7 @@
     <string name="themes">THEMES</string>
 
     <!-- Other strings -->
+    <string name="remove_bookmark_alert_dialog_message">Are you sure you want to remove bookmark?</string>
     <string name="error_connection">No Internet Connection.</string>
     <string name="auth_failed">Authorisation failed.</string>
     <string name="bookmark_added">Bookmark added.</string>

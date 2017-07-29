@@ -1,6 +1,8 @@
 package com.example.sarthak.news.adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.example.sarthak.news.activities.SettingsActivity;
 import com.example.sarthak.news.firebasemanager.FirebaseAuthorisation;
 import com.example.sarthak.news.models.Item;
 import com.example.sarthak.news.R;
@@ -264,6 +267,39 @@ public class NewsListRecyclerAdapter extends RecyclerView.Adapter<NewsViewHolder
     }
 
     /**
+     * Creates an alert dialog to confirm user to remove bookmarked item.
+     *
+     * @param position is the index of the news item that is to be removed from bookmarks
+     */
+    private void onClickRemoveFromList(final int position) {
+
+        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                if (item.getItemId() == R.id.remove_bookmark_btn) {
+
+                    // setup alert dialog
+                    new AlertDialog.Builder(mContext)
+                            .setMessage(R.string.remove_bookmark_alert_dialog_message)
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                            {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                    removeFromList(position);
+                                }
+                            })
+                            .setNegativeButton("No", null)
+                            .show();
+                }
+
+                return false;
+            }
+        });
+    }
+
+    /**
      * PURPOSE: Removes selected news data from 'Bookmarks' of current user in firebase database.
      *
      * It removes the selected news item from the 'Bookmarks' key of the current user.
@@ -272,55 +308,45 @@ public class NewsListRecyclerAdapter extends RecyclerView.Adapter<NewsViewHolder
      *
      * @param position is the index of the news item that is to be removed from bookmarks
      */
-    private void onClickRemoveFromList(final int position) {
+    private void removeFromList(int position) {
 
         final int newsPosition = position + 1;
 
-        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
+        // get firebase current user
+        String currentUser = new FirebaseAuthorisation(mContext).getCurrentUser();
 
-                if (item.getItemId() == R.id.remove_bookmark_btn) {
+        // remove shared preferences 'Read' status
+        SharedPreferences.Editor editor = mContext
+                .getSharedPreferences(Constants.READ_ARTICLES_STATUS_SHARED_PREFERENCES, MODE_PRIVATE).edit();
+        editor.remove(currentUser + newsDetails.get(position).getHeadline());
+        editor.apply();
 
-                    // get firebase current user
-                    String currentUser = new FirebaseAuthorisation(mContext).getCurrentUser();
+        // firebase database reference
+        DatabaseReference removeDataReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
+                .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
+                .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(newsPosition));
+        // remove data item
+        removeDataReference.removeValue();
 
-                    // remove shared preferences 'Read' status
-                    SharedPreferences.Editor editor = mContext
-                            .getSharedPreferences(Constants.READ_ARTICLES_STATUS_SHARED_PREFERENCES, MODE_PRIVATE).edit();
-                    editor.remove(currentUser + newsDetails.get(position).getHeadline());
-                    editor.apply();
+        //-------------------------------------------------------------------------------------
+        // update index of news items following deleted news item
+        //-------------------------------------------------------------------------------------
+        // decrease index of following news items by 1.
+        for (int i = newsPosition + 1 ; i <= newsDetails.size() ; i++) {
 
-                    // firebase database reference
-                    DatabaseReference removeDataReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
-                            .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
-                            .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(newsPosition));
-                    // remove data item
-                    removeDataReference.removeValue();
+            DatabaseReference bookmarkReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
+                    .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
+                    .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(i - 1));
 
-                    //-------------------------------------------------------------------------------------
-                    // update index of news items following deleted news item
-                    //-------------------------------------------------------------------------------------
-                    // decrease index of following news items by 1.
-                    for (int i = newsPosition + 1 ; i <= newsDetails.size() ; i++) {
+            Item newsItem = newsDetails.get(i - 1);
 
-                        DatabaseReference bookmarkReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
-                                .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
-                                .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(i - 1));
+            bookmarkReference.setValue(newsItem);
+        }
 
-                        Item newsItem = newsDetails.get(i - 1);
-
-                        bookmarkReference.setValue(newsItem);
-                    }
-
-                    // remove last item in firebase database as it has been copied to its previous location
-                    DatabaseReference removeDatabaseFinalValueReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
-                            .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
-                            .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(newsDetails.size()));
-                    removeDatabaseFinalValueReference.removeValue();
-                }
-                return false;
-            }
-        });
+        // remove last item in firebase database as it has been copied to its previous location
+        DatabaseReference removeDatabaseFinalValueReference = mDatabase.child(mContext.getString(R.string.KEY_USERS))
+                .child(currentUser).child(mContext.getString(R.string.KEY_BOOKMARKS))
+                .child(mContext.getString(R.string.KEY_BOOKMARKS) + "_0" + String.valueOf(newsDetails.size()));
+        removeDatabaseFinalValueReference.removeValue();
     }
 }
