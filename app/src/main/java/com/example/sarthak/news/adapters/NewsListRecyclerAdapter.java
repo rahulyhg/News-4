@@ -17,7 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.sarthak.news.activities.SettingsActivity;
 import com.example.sarthak.news.firebasemanager.FirebaseAuthorisation;
 import com.example.sarthak.news.models.Item;
 import com.example.sarthak.news.R;
@@ -300,7 +299,7 @@ public class NewsListRecyclerAdapter extends RecyclerView.Adapter<NewsViewHolder
     }
 
     /**
-     * PURPOSE: Removes selected news data from 'Bookmarks' of current user in firebase database.
+     * PURPOSE: Removes selected news data from 'Bookmarks' category of current user in firebase database.
      *
      * It removes the selected news item from the 'Bookmarks' key of the current user.
      * Then it runs a loop to decrease the index of the following news items by 1.

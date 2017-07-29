@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:2:1-39:12
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:2:1-43:12
 	package
 		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml
@@ -28,7 +28,7 @@ MERGED from [com.google.firebase:firebase-iid:10.2.4] C:\Users\Sarthak\.android\
 	android:name
 		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:6:22-76
 application
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:8:5-37:19
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:8:5-41:19
 MERGED from [com.android.support:design:24.2.1] C:\Users\Sarthak\.android\build-cache\2420753ae677b770fa05e246e46203b63e723331\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:24.2.1] C:\Users\Sarthak\.android\build-cache\c01622149c9d5b1b8069ce61a9c336434dfac8e4\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:24.2.1] C:\Users\Sarthak\.android\build-cache\091f91c8e59e78dbade8ba242fce1e5303b5e2af\output\AndroidManifest.xml:22:5-20
@@ -63,53 +63,61 @@ MERGED from [com.android.support:support-compat:24.2.1] C:\Users\Sarthak\.androi
 	android:theme
 		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:13:9-53
 activity#com.example.sarthak.news.activities.SplashScreenActivity
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:14:9-21:20
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:14:9-22:20
+	android:screenOrientation
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:15:13-49
 	android:theme
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:15:13-47
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:16:13-47
 	android:name
 		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:14:19-66
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:16:13-20:29
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:17:17-69
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:17:25-66
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:19:17-77
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:19:27-74
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:20:27-74
 activity#com.example.sarthak.news.activities.LoginActivity
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:22:9-23:48
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:23:9-25:52
+	android:screenOrientation
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:25:13-49
 	android:label
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:23:13-45
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:24:13-45
 	android:name
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:22:19-59
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:23:19-59
 activity#com.example.sarthak.news.activities.HomeScreenActivity
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:24:9-26:48
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:26:9-28:48
 	android:label
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:26:13-45
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:28:13-45
 	android:name
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:25:13-58
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:27:13-58
 activity#com.example.sarthak.news.activities.NewsDescriptionActivity
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:27:9-29:75
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:29:9-31:75
 	android:parentActivityName
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:29:13-72
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:31:13-72
 	android:name
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:28:13-63
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:30:13-63
 activity#com.example.sarthak.news.activities.SettingsActivity
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:30:9-33:60
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:32:9-36:60
+	android:screenOrientation
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:35:13-49
 	android:parentActivityName
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:32:13-72
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:34:13-72
 	android:theme
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:33:13-57
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:36:13-57
 	android:name
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:31:13-56
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:33:13-56
 activity#com.example.sarthak.news.activities.RegisterActivity
-ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:34:9-36:70
+ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:37:9-40:52
+	android:screenOrientation
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:40:13-49
 	android:parentActivityName
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:36:13-67
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:39:13-67
 	android:name
-		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:35:13-56
+		ADDED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml:38:13-56
 uses-sdk
 INJECTED from C:\Users\Sarthak\Documents\AndroidProjects\News\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.android.support:design:24.2.1] C:\Users\Sarthak\.android\build-cache\2420753ae677b770fa05e246e46203b63e723331\output\AndroidManifest.xml:20:5-43

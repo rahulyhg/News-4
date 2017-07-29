@@ -252,7 +252,7 @@ public class HomeScreenActivity extends BaseActivity implements NavigationDrawer
      * When the broadcast receiver detects any change in network state,
      * onReceive method in broadcast receiver is called.
      *
-     * Initially, the snackbar is initialised as null. If network connection
+     * Initially, snackbar is initialised as null. If network connection
      * is available, snackbar remains null and hence dismissSnackbar and setUpLayout
      * do not do anything.
      *

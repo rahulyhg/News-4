@@ -103,19 +103,19 @@
 # view res/layout/abc_screen_simple_overlay_action_mode.xml #generated:32
 -keep class android.support.v7.widget.ViewStubCompat { <init>(...); }
 
-# view AndroidManifest.xml #generated:40
+# view AndroidManifest.xml #generated:42
 -keep class com.example.sarthak.news.activities.HomeScreenActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:37
+# view AndroidManifest.xml #generated:38
 -keep class com.example.sarthak.news.activities.LoginActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:43
+# view AndroidManifest.xml #generated:45
 -keep class com.example.sarthak.news.activities.NewsDescriptionActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:50
+# view AndroidManifest.xml #generated:53
 -keep class com.example.sarthak.news.activities.RegisterActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:46
+# view AndroidManifest.xml #generated:48
 -keep class com.example.sarthak.news.activities.SettingsActivity { <init>(...); }
 
 # view AndroidManifest.xml #generated:28
@@ -124,33 +124,33 @@
 # view res/layout/cardview_news_list.xml #generated:20
 -keep class com.example.sarthak.news.utils.SquareImageView { <init>(...); }
 
-# view AndroidManifest.xml #generated:62
+# view AndroidManifest.xml #generated:66
 -keep class com.google.android.gms.auth.api.signin.RevocationBoundService { <init>(...); }
 
-# view AndroidManifest.xml #generated:53
+# view AndroidManifest.xml #generated:57
 -keep class com.google.android.gms.auth.api.signin.internal.SignInHubActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:67
+# view AndroidManifest.xml #generated:71
 -keep class com.google.android.gms.common.api.GoogleApiActivity { <init>(...); }
 
-# view AndroidManifest.xml #generated:77
+# view AndroidManifest.xml #generated:81
 -keep class com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:72
+# view AndroidManifest.xml #generated:76
 -keep class com.google.android.gms.measurement.AppMeasurementReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:86
+# view AndroidManifest.xml #generated:90
 -keep class com.google.android.gms.measurement.AppMeasurementService { <init>(...); }
 
-# view AndroidManifest.xml #generated:105
+# view AndroidManifest.xml #generated:109
 -keep class com.google.firebase.iid.FirebaseInstanceIdInternalReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:91
+# view AndroidManifest.xml #generated:95
 -keep class com.google.firebase.iid.FirebaseInstanceIdReceiver { <init>(...); }
 
-# view AndroidManifest.xml #generated:112
+# view AndroidManifest.xml #generated:116
 -keep class com.google.firebase.iid.FirebaseInstanceIdService { <init>(...); }
 
-# view AndroidManifest.xml #generated:120
+# view AndroidManifest.xml #generated:124
 -keep class com.google.firebase.provider.FirebaseInitProvider { <init>(...); }
 
